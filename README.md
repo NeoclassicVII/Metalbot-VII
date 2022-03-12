@@ -9,13 +9,19 @@ INFO: Neoclassic VII is a great composer and creator of the genre called "Magica
 For any questions and/or ideas, please contact him оn Telegram: @MetalheadDumbledore
 
 Check out the Telegram translation by Neoclassic VII called "Metalgram" (it's in russian). Metalgram is a custom Telegram language created for Metalheads.
+
 Link for Metalgram: https://t.me/setlanguage/metalgramm
+
 Good luck by using and modifying!
 
 (C) Neoclassic VII
 
 Stage One: [complete]
+
 Stage Two: [in procces]
+
 Stage Three: ?
+
 Stage Four: ?
+
 ...
