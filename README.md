@@ -16,19 +16,14 @@ Good luck by using and modifying!
 
 (C) Neoclassic VII
 
-Stage One: [complete]
-
-Stage Two: [in procces]
-
-Stage Three: ?
-
-Stage Four: ?
+- Stage One: [complete]
+- Stage Two: [in procces]
+- Stage Three: ?
+- Stage Four: ?
 
 ...
 
-WARNING: BETA VERSION!
-
-For the future updates:
+[For the future updates:]
 
 - Design work 
 - New optons 
