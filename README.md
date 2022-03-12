@@ -33,5 +33,4 @@ Good luck by using and modifying!
 - More info about genres ect.
 
 Tips:
-- <Ctrl C> exits the program
 - Type the name of the genre (option N°2) fully and correctly!
