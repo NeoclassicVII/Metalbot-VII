@@ -34,7 +34,6 @@ For the future updates:
 - New optons 
 - New random bands
 - More info about genres ect.
-- etc.
 
 Tips:
 - <Ctrl C> exits the program
