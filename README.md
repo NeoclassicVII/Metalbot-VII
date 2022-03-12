@@ -25,3 +25,14 @@ Stage Three: ?
 Stage Four: ?
 
 ...
+
+WARNING: BETA VERSION!
+
+For the future updates:
+
+- Design work 
+- New optons 
+- New random bands
+- More info about genres ect.
+- etc.
+
