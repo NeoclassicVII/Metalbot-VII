@@ -142,7 +142,7 @@ def main():
       nl()
       print("[" + Fore.RED + "WARNING!" + Fore.WHITE + "] " + Fore.GREEN + "Please type the name of the genre/subgenre fully and correctly! Otherwise the program may not work!")
       nl()
-      time.sleep(2)
+      time.sleep(1)
       ask = print(Fore.YELLOW + "Which subgenre/genre? " + Fore.WHITE, end='')
       launch = input()
       genres = ["Deathcore","Power Metal","Heavy Metal","Death Metal","Black Metal",
@@ -164,7 +164,7 @@ def main():
       try:
         if difflib.get_close_matches(launch,genres): 
           nl()
-          time.sleep(1)
+          time.sleep(0.6)
           try:
             print(wikipedia.summary(difflib.get_close_matches(launch,genres,1), sentences = 5, auto_suggest = False))
             #print("Wow! {} is a great genre!".format(*difflib.get_close_matches(launch,genres), sep=''))
@@ -203,13 +203,13 @@ def main():
           nl()
           time.sleep(1)
           print("I don't know such genre:(")
-          time.sleep(2)
+          time.sleep(1)
           os.system("cls")
 
       except (requests.ConnectionError, requests.Timeout) as exception:
         time.sleep(0.6)
-        print(Fore.RED + "No Internet Connection!" + Fore.WHITE)
-        time.sleep(0.8)
+        print("[-] " + Fore.RED + "No Internet Connection!" + Fore.WHITE)
+        time.sleep(0.9)
         main()
 
   elif choice == str("3"):
