@@ -30,6 +30,7 @@ Good luck by using and modifying!
 - Design work (In process)
 - New optons 
 - New random bands (In process)
+- Improved random group generation system (Not sure)
 - Ability to add new genres by the user
 - More info about genres ect. (In process)
 
