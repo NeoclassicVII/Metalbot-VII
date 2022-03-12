@@ -14,7 +14,7 @@
 # (C) Neoclassic VII
 #
 # Stage One: [complete]
-# Stage Two: [in procces]
+# Stage Two: [in process]
 # Stage Three: ?
 # Stage Four: ?
 # ...
