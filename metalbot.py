@@ -83,24 +83,45 @@ def main():
   choice = input()
 
   if choice == str("1"):
+
+    os.system("cls")
+    nl()
+    nl()
     time.sleep(1)
+    print(Fore.CYAN + "The generation will start in [3]...".center(75))
+    time.sleep(1)
+    os.system("cls")
+    nl()
+    nl()
+    print(Fore.CYAN + "The generation will start in [2]...".center(75))
+    time.sleep(1)
+    os.system("cls")
+    nl()
+    nl()
+    print(Fore.CYAN + "The generation will start in [1]...".center(75))
+    time.sleep(0.8)
+
     while True:
       os.system("cls")
       
       with open("bands.txt", "r", encoding='utf-8') as bands:
         read = bands.readlines()
-
-        nl()
-        print(Fore.CYAN + pyfiglet.figlet_format("Random Bands"))
-        nl()
-        print(Fore.RED + "*ENTER to generate!*".center(72))
-        print("*Type 666 to go back to the menu!* ".center(72))
-        nl()
-        print(Fore.YELLOW)
-        print(random.choice(read).center(70))
-        print(Fore.WHITE)
+        
+        for bands in range(20):
+          os.system("cls")
+          nl()
+          print(Fore.CYAN + pyfiglet.figlet_format("Random Bands"))
+          nl()
+          print(Fore.RED + "*ENTER to generate!*".center(72))
+          print("*Type 666 to go back to the menu!* ".center(72))
+          nl()
+          print(Fore.YELLOW)
+          print(random.choice(read).center(70))
+          
+          print(Fore.WHITE)
+          
         randomband = input()
-      
+
       if randomband == "666":
         os.system("cls")
         time.sleep(1)
@@ -195,7 +216,6 @@ def main():
     time.sleep(1)
     os.system("cls")
     print(Fore.CYAN + pyfiglet.figlet_format("Contact"))
-    nl()
     print(Fore.RED + "*Type 666 or just click [Enter] to go back to the menu!*")
     nl()
     print(Fore.RED + "Telegram: " + Fore.GREEN + "@MetalheadDumbledore")
