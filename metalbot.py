@@ -19,30 +19,6 @@
 # Stage Four: ?
 # ...
 #
-# [NOTES ONLY FOR NEOCLASSIC VII:]
-# #Pafiksit error s vikipediey (kagda statya nesushestvuet). Nayti sposob
-# #paluchit ssilku ot vikipedii i redirektnuca srazu v vikipediyu a ne v brauzer. !(Vsyo resheno v ume, 10.03.22, 20:05)!
-# 
-# Astalnoe uznaem v pracesse vsivo etovo, ibo stopracentna v processe budut poyavlyaca novie bagi i errori. Vot. [9.03.22, 17:32]
-# !A, blya. Zabil. Yisho nada papolnit spiski grupp i janrov. Vot. [9.03.22, 17:35]
-# !Rabotat s dizaynom v celom. Vot. [9.03.22, 17:42] (uje est kakieto karektirovki [10.03.22, 20:06])
-# 
-# [10.03.22, 20:06] 1)!Pafiksil GRUBEYSHIY bag v mudole vikipedii, tiper vsyo vrodibi daljno narmalno rabotat (bag ne v mayom kode a v samom module).
-# Esli vsyoje budut kasyaki, doljen budu nayti drugoy modul dlya raboti s dannimi i s informaciey. 
-# 2) Poigralsa s dizaynom. Vsyo norm, no doljen rabotat dalshe. 
-#
-# P.S: Vcherashnie zadachi [a imenno, zadachi [9.03.22, 17:32/17:35/i otchasti 17:42] vsyo yisho v sile. Toyest nad nimi predstait yisho rabotat]
-# P.S [2]: !Ya daje ne gavaryu a tom, shto novie idei dlya dalneyshey realizacii payavlyayuca nejeli v kajduyu sekundu. Tak shto da, takje nado chatelnee
-# rabotat s ideyami i realizavat ix
-#
-# [11.03.22, 23:11] Sozdal fayl dlya raboti s randomnoy rekomendaciey grupp. Sozdal yisho takoy je dlya raboti s janrami i s vikipediey,
-# no izza yobanix kasyakov samoy bibliateki (patamushta bez vikipedii vsyo rabotaet narmalno), nixuya ne vishlo. Tachnee vishlo, no s ispolzovaniem
-# argumenta 'auto_suggest = False' vidayot ashibku: KeyError: 'fullurl'. Mojet budu sprashivat v forumax vsyakix, no eto nesiryozno, mojno ispolzovat
-# spisok i bez fayla, sobstvenno, kak ranshe, da i kak seychas. 
-#
-# Plani na [BLIJAYSHEE] budushee: budu igraca s dizaynom i esli budet vozmojno, budu ispravit kasyak s vikipediey. Papolnyu spiski janrov i grupp, 
-# pridumayu idei dlya novix opciy pragrammi.
-#
 
 try:
   import os, sys, requests, time, random, webbrowser, wikipedia, pyfiglet, difflib
@@ -140,12 +116,10 @@ def main():
     while True:
       time.sleep(1)
       os.system("cls")
-      nl()
+      print(Fore.BLUE + pyfiglet.figlet_format("Genres"))
       print(Fore.RED + "*Type 666 to go back to the menu!*" + Fore.WHITE)
       nl()
-      print("_" * 110)
-      print(Fore.RED + " WARNING! " + Fore.WHITE + "Please type the name of the genre/subgenre fully and correctly! Otherwise the program may not work!")
-      print("_" * 110)
+      print("[" + Fore.RED + "WARNING!" + Fore.WHITE + "] " + Fore.GREEN + "Please type the name of the genre/subgenre fully and correctly! Otherwise the program may not work!")
       nl()
       time.sleep(2)
       ask = print(Fore.YELLOW + "Which subgenre/genre? " + Fore.WHITE, end='')
@@ -276,7 +250,3 @@ except KeyboardInterrupt:
   print("_" * 25)
   time.sleep(0.1)
   sys.exit()  
-
-# FUCK YEAH, I DID IT!
-# FUCK YEAH, AGAIN!
-# FUCK YEAH, WE HAVE ONLY ONE TRY/EXCEPT! (Now we have two... (P.S: Now three...))
