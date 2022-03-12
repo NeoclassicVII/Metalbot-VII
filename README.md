@@ -16,6 +16,8 @@ Good luck by using and modifying!
 
 (C) Neoclassic VII
 
+[Program stages:]
+
 - Stage One: [complete]
 - Stage Two: [in procces]
 - Stage Three: ?
