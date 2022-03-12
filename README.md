@@ -27,10 +27,11 @@ Good luck by using and modifying!
 
 [For the future updates:]
 
-- Design work 
+- Design work (In procces)
 - New optons 
-- New random bands
-- More info about genres ect.
+- New random bands (In procces)
+- Ability to add new genres by the user
+- More info about genres ect. (In procces)
 
 Tips:
 - Type the name of the genre (option N°2) fully and correctly!
