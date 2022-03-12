@@ -19,7 +19,7 @@ Good luck by using and modifying!
 [Program stages:]
 
 - Stage One: [complete]
-- Stage Two: [in procces]
+- Stage Two: [in process]
 - Stage Three: ?
 - Stage Four: ?
 
@@ -27,11 +27,11 @@ Good luck by using and modifying!
 
 [For the future updates:]
 
-- Design work (In procces)
+- Design work (In process)
 - New optons 
-- New random bands (In procces)
+- New random bands (In process)
 - Ability to add new genres by the user
-- More info about genres ect. (In procces)
+- More info about genres ect. (In process)
 
 Tips:
 - Type the name of the genre (option N°2) fully and correctly!
