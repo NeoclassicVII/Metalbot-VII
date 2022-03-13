@@ -15,9 +15,6 @@ def lastfm(name):
 
 	source = requests.get("https://www.last.fm/tag/"+str(', '.join(difflib.get_close_matches(name,genres,1)))+"/artists").text
 
-	#url = "https://www.last.fm/tag/"+str(', '.join(difflib.get_close_matches(launch,genres,1)))+"/artists"
-	#webbrowser.open(url)
-
 	soup = BeautifulSoup(source, "lxml")
 	ol = soup.find("ol", class_="big-artist-list")
 
