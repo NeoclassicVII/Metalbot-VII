@@ -16,7 +16,7 @@ Good luck by using and modifying!
 
 (C) Neoclassic VII
 
-[Program stages:]
+[Program stages]
 
 - Stage One: [complete]
 - Stage Two: [in process]
@@ -25,7 +25,7 @@ Good luck by using and modifying!
 
 ...
 
-[For the future updates:]
+[For the future updates]
 
 - Design work (In process)
 - New optons 
