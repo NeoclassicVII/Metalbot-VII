@@ -22,6 +22,7 @@
 
 try:
   import os, sys, requests, time, random, webbrowser, wikipedia, pyfiglet, difflib
+  from lastfm import lastfm
   from colorama import Fore
   from pyfiglet import figlet_format
 
@@ -144,9 +145,9 @@ def main():
       nl()
       time.sleep(1)
       ask = print(Fore.YELLOW + "Which subgenre/genre? " + Fore.WHITE, end='')
-      launch = input()
+      launch = input().lower()
       genres = ["Deathcore","Power Metal","Heavy Metal Music","Death Metal","Black Metal",
-      "Groove Metal","Thrash Metal","Alternative Metal","Nu Metal","Progressive Metal","Black-Death Metal","Black Death Metal",
+      "Groove Metal","Thrash Metal","Alternative Metal","Nu Metal","Progressive Metal","Black-Death Metal","Black Death Metal","Blackened Death Metal",
       "Tech Death Metal","Metalcore","White Metal","Melodic Death Metal","Folk Metal","Neoclassical Death Metal",
       "Doom Metal","Industrial Metal","Gothic Metal","Djent","Avant-Garde Metal","Prog Metal","Glam Metal","Symphonic Deathcore",
       "Technical Deathcore","Blackened Tech-Death Metal","Grindcore","Trve Cvlt Norwegian Black Metal","Electronicore","Magical Death Metal",
@@ -165,19 +166,28 @@ def main():
         if difflib.get_close_matches(launch,genres,1): 
           nl()
           time.sleep(0.6)
+          
           try:
-            print(wikipedia.summary(", ".join(difflib.get_close_matches(launch,genres,1)), sentences = 5, auto_suggest = False))
-            #print("Wow! {} is a great genre!".format(*difflib.get_close_matches(launch,genres), sep=''))
+            if wikipedia.summary(", ".join(difflib.get_close_matches(launch,genres,1)), sentences = 5, auto_suggest = False):
+              print(Fore.GREEN + "[+] Wikipedia Page Found!" + Fore.CYAN)
+              nl()
+              print(wikipedia.summary(", ".join(difflib.get_close_matches(launch,genres,1)), sentences = 5, auto_suggest = False))
+              #print("Wow! {} is a great genre!".format(*difflib.get_close_matches(launch,genres), sep=''))
+            
+            else:
+              pass
 
           except wikipedia.exceptions.PageError:
             time.sleep(0.5)
-            print("[-] No Wikipedia page found ")
+            print(Fore.RED + "[-] No Wikipedia page found ")
             pass
+
+          lastfm(launch)
 
           time.sleep(1)
           nl()
           # Now the program will open the browser to search info about the genre etc.
-          print(Fore.CYAN + "Press ENTER to search in browser:", end='') 
+          print(Fore.RED + "[+] " + Fore.WHITE + "Press ENTER to search in browser:", end='') 
           print(Fore.WHITE)
           search = input()
 
