@@ -35,5 +35,12 @@ Good luck by using and modifying!
 - Ability to add new genres by the user
 - More info about genres ect. (In process)
 
+[In Process]
+- Fixed some bugs with wikipedia
+- Working on LastFM and Metal-Archive etc.
+- Working on design
+- Adding new bands
+- Adding more info etc.
+
 Tips:
 - Type the name of the genre (option N°2) fully and correctly!
