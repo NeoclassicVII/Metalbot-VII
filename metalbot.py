@@ -145,12 +145,12 @@ def main():
       time.sleep(1)
       ask = print(Fore.YELLOW + "Which subgenre/genre? " + Fore.WHITE, end='')
       launch = input()
-      genres = ["Deathcore","Power Metal","Heavy Metal","Death Metal","Black Metal",
+      genres = ["Deathcore","Power Metal","Heavy Metal Music","Death Metal","Black Metal",
       "Groove Metal","Thrash Metal","Alternative Metal","Nu Metal","Progressive Metal","Black-Death Metal","Black Death Metal",
       "Tech Death Metal","Metalcore","White Metal","Melodic Death Metal","Folk Metal","Neoclassical Death Metal",
       "Doom Metal","Industrial Metal","Gothic Metal","Djent","Avant-Garde Metal","Prog Metal","Glam Metal","Symphonic Deathcore",
       "Technical Deathcore","Blackened Tech-Death Metal","Grindcore","Trve Cvlt Norwegian Black Metal","Electronicore","Magical Death Metal",
-      "Mathcore","Symphonic Black Metal","Ambient Black Metal","Folk Black Metal","Brutal Death Metal","Melodic Black Metal","Neoclassical Metal"
+      "Mathcore","Symphonic Black Metal","Ambient Black Metal","Folk Black Metal","Brutal Death Metal","Melodic Black Metal","Neoclassical Metal","Cyber Metal"
       ]
 
       if launch == "666":
@@ -162,11 +162,11 @@ def main():
         main()
 
       try:
-        if difflib.get_close_matches(launch,genres): 
+        if difflib.get_close_matches(launch,genres,1): 
           nl()
           time.sleep(0.6)
           try:
-            print(wikipedia.summary(difflib.get_close_matches(launch,genres,1), sentences = 5, auto_suggest = False))
+            print(wikipedia.summary(", ".join(difflib.get_close_matches(launch,genres,1)), sentences = 5, auto_suggest = False))
             #print("Wow! {} is a great genre!".format(*difflib.get_close_matches(launch,genres), sep=''))
 
           except wikipedia.exceptions.PageError:
@@ -194,7 +194,7 @@ def main():
           print(Fore.BLUE + "I'll redirect you to google in a moment, so you can find information about that genre!")
           print(Fore.GREEN + "." * 86, Fore.WHITE)
           time.sleep(3)
-          url="https://www.google.com/search?q="+str(difflib.get_close_matches(launch,genres,1))+""
+          url="https://www.google.com/search?q="+str(", ".join(difflib.get_close_matches(launch,genres,1)))+""
           webbrowser.open(url)
    
           sys.exit()
