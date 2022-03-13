@@ -1,4 +1,5 @@
 # LastFM Web Crawler for Metalheads by Neoclassic VII
+# Written according to the principle: "If it works - do not touch it!". I could have found a better way to write this code, but it works fine as it is.
 import webbrowser 
 import requests
 import difflib, time
