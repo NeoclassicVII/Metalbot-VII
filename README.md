@@ -44,3 +44,9 @@ Good luck by using and modifying!
 
 Tips:
 - Type the name of the genre (option N°2) fully and correctly!
+
+# Last biggest update: [13.03.22]
+- Created moduel Last FM
+- New design work
+- New bands and genres
+- etc.
