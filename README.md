@@ -19,34 +19,18 @@ Good luck by using and modifying!
 [Program stages]
 
 - Stage One: [complete]
-- Stage Two: [in process]
-- Stage Three: ?
+- Stage Two: [complete]
+- Stage Three: [in process]
 - Stage Four: ?
-
 ...
-
-[For the future updates]
-
-- Design work (In process)
-- New optons 
-- LastFM, Metal-Archive etc. (In process)
-- New random bands (In process)
-- Improved random group generation system (Not sure)
-- Ability to add new genres by the user
-- More info about genres ect. (In process)
-
-[In Process]
-- Fixed some bugs with wikipedia
-- Working on LastFM and Metal-Archive etc.
-- Working on design
-- Adding new bands
-- Adding more info etc.
 
 Tips:
 - Type the name of the genre (option N°2) fully and correctly!
 
-# Last biggest update: [13.03.22]
-- Created module Last FM
-- New design work
-- New bands and genres
-- etc.
+# Last biggest update: [22.03.22]
+- Daily Metal News
+- New dataset (9000 bands)
+- New genres
+- Updated LastFM
+- More readable code
+- Fixed bugs/errors
