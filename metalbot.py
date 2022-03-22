@@ -1,14 +1,15 @@
 # Created by Neoclassic VII
 # This program is for Metalheads only.
-
+#
 # Written according to the principle: "If it works - do not touch it!".
 #
-# INFO: Neoclassic VII is a great composer and creator of the genre called "Magical Death Metal". This program is his first
-# biggest program he ever created. Before this he created some calculators etc. So please keep this in mind 
+# INFO: Neoclassic VII is a great composer and creator of the genre called "Magical Death Metal". This program is his
+# first biggest program he ever created. Before this he created some calculators etc. So please keep this in mind
 # and don't judgе too harshly. 
 # For any questions and/or ideas, please contact him оn Telegram: @MetalheadDumbledore
 #
-# Check out the Telegram translation by Neoclassic VII called "Metalgram" (it's in russian). Metalgram is a custom Telegram language created for Metalheads.
+# Check out the Telegram translation by Neoclassic VII called "Metalgram" (it's in russian).
+# Metalgram is a custom Telegram language created for Metalheads.
 # Link for Metalgram: https://t.me/setlanguage/metalgramm
 #
 # Good luck by using and modifying!
@@ -32,39 +33,23 @@ try:
   import wikipedia
   import pyfiglet
   import difflib 
+  import colorama
   from colorama import Fore
   from pyfiglet import figlet_format
+  from metalinjection import metalnews
   from lastfm import lastfm
 
-  # Terminal (cmd) size
-  cmd_size = "mode 151,39"
-  os.system(cmd_size)
+  colorama.init()
 
   # Startup Screen
   os.system("cls")
   time.sleep(0.3)
-  print(Fore.RED + """
-                                   ______              
-                              .d$$$******$$$$c.        
-                           .d$P"            "$$c      
-                          $$$$$.           .$$$*$.    
-                        .$$ 4$L*$$.     .$$Pd$  '$b   
-                        $F   *$. "$$e.e$$" 4$F   ^$b  
-                       d$     $$   z$$$e   $$     '$. 
-                       $P     `$L$$P` `"$$d$"      $$ 
-                       $$     e$$F       4$$b.     $$ 
-                       $b  .$$" $$  VII .$$ "4$b.  $$ 
-                       $$e$P"    $b     d$`    "$$c$F 
-                       '$P$$$$$$$$$$$$$$$$$$$$$$$$$$  
-                        "$c.      4$.  $$       .$$   
-                         ^$$.      $$ d$"      d$P    
-                           "$$c.   `$b$F    .d$P"     
-                             `4$$$c.$$$..e$$P"        
-                                 `^^^^^^^`
-        """ )
 
-  # Sorry about this ugliness (if you know what I mean)
-  print(Fore.GREEN +  "                             By Neoclassic VII      " + Fore.WHITE)
+  with open("ASCII Art.txt", "r", encoding='utf-8') as asciiart:
+    art = asciiart.read()
+    print(Fore.RED + art + Fore.WHITE)
+    print(Fore.GREEN + "By Neoclassic VII".center(75) + Fore.WHITE)
+ 
   time.sleep(1.5)
   os.system("cls")
 
@@ -94,40 +79,37 @@ def back_to_menu():
 
 # The first option of the program
 def first_option():
-  os.system("cls")
-  nl()
-  nl()
-  time.sleep(1)
+  def cls_cmd():
+  	time.sleep(1)
+  	os.system("cls")
+  	nl()
+  	nl()
+
+  cls_cmd()
   print(Fore.CYAN + "The generation will start in [3]...".center(75) + Fore.WHITE)
-  time.sleep(1)
-  os.system("cls")
-  nl()
-  nl()
+  cls_cmd()
   print(Fore.CYAN + "The generation will start in [2]...".center(75) + Fore.WHITE)
-  time.sleep(1)
-  os.system("cls")
-  nl()
-  nl()
+  cls_cmd()
   print(Fore.CYAN + "The generation will start in [1]...".center(75) + Fore.WHITE)
   time.sleep(0.8)
 
   while True:
     os.system("cls")
       
-    with open("bands.txt", "r", encoding='utf-8') as bands:
+    with open("metal_bands_2022.txt", "r", encoding='utf-8') as bands:
       read = bands.readlines()
-        
-      for bands in range(20):
-        os.system("cls")
-        nl()
-        print(Fore.CYAN + pyfiglet.figlet_format("Random Bands"))
-        nl()
-        print(Fore.RED + "*ENTER to generate!*".center(72))
-        print("*Type 666 to go back to the menu!* ".center(72))
-        nl()
-        print(Fore.YELLOW)
-        print(random.choice(read).center(70))
-        print(Fore.WHITE)
+      os.system("cls")
+      nl()
+      print(Fore.CYAN + pyfiglet.figlet_format("Random Bands"))
+      nl()
+      print(Fore.RED + "*ENTER to generate!*".center(72))
+      print("*Type 666 to go back to the menu!* ".center(72))
+      nl()
+
+      for bands in range(80):
+        sys.stdout.write(Fore.WHITE + random.choice(read).strip().center(70) + "\r")
+        sys.stdout.flush()
+        time.sleep(0.02) 
           
       input_ = input()
 
@@ -156,12 +138,15 @@ def second_option():
 
     genres = [
     "Deathcore","Power Metal","Heavy Metal Music","Death Metal","Black Metal",
-    "Groove Metal","Thrash Metal","Alternative Metal","Nu Metal","Progressive Metal","Black-Death Metal","Black Death Metal","Blackened Death Metal",
+    "Groove Metal","Thrash Metal","Alternative Metal","Nu Metal","Progressive Metal","Black-Death Metal",
+    "Black Death Metal","Blackened Death Metal",
     "Technical Death Metal","Metalcore","White Metal","Melodic Death Metal","Folk Metal","Neoclassical Death Metal",
-    "Doom Metal","Industrial Metal","Gothic Metal","Djent","Avant-Garde Metal","Prog Metal","Glam Metal","Symphonic Deathcore",
-    "Technical Deathcore","Blackened Technical Death Metal","Grindcore","Trve Kvlt","Norwegian Black Metal","Electronicore","Magical Death Metal",
-    "Mathcore","Symphonic Black Metal","Ambient Black Metal","Folk Black Metal","Brutal Death Metal","Melodic Black Metal","Neoclassical Metal","Cyber Metal",
-    "Symphonic Deathcore"
+    "Doom Metal","Industrial Metal","Gothic Metal","Djent","Avant-Garde Metal","Prog Metal","Glam Metal",
+    "Symphonic Deathcore","Technical Deathcore","Blackened Technical Death Metal","Grindcore","Trve Kvlt",
+    "Norwegian Black Metal","Electronicore","Magical Death Metal",
+    "Mathcore","Symphonic Black Metal","Ambient Black Metal","Folk Black Metal",
+    "Brutal Death Metal","Melodic Black Metal","Neoclassical Metal","Cyber Metal",
+    "Symphonic Deathcore","Folk Deathcore","Neoclassical Deathcore","Porngrind","Pornogore","Folk Deathcore","Folk Death Metal"
     ]
 
     if launch == "666":
@@ -265,10 +250,16 @@ def exit():
 def menu():
   os.system("cls")
   print(Fore.GREEN + pyfiglet.figlet_format("Metalbot VII") + Fore.WHITE)
+  try:
+  	metalnews()
+  except (requests.ConnectionError, requests.Timeout) as exception:
+  	pass
+
   print("[1] Random band recomendation")
   print("[2] Info about genres/subgenres, band recomendation")
   print("[3] Contact/Info")
-  print(Fore.CYAN + "[666] Exit")
+  print("[4] Lyrics Founder")
+  print(Fore.RED + "[666] Exit")
   nl()
   print(Fore.YELLOW + "Choose option: " + Fore.WHITE, end='')
 
@@ -283,6 +274,9 @@ def menu():
 
   elif choice == str("3"):
     third_option()
+  
+  elif choice == str("4"):
+  	print("minpen")
 
   elif choice == str("666"):
     exit()
@@ -303,6 +297,4 @@ except KeyboardInterrupt:
   print("Exiting the program...")
   print("_" * 25)
   sys.exit()  
-
-# FUCK YEAH, I DID IT!
-# FUCK YEAH, AGAIN!
+  
