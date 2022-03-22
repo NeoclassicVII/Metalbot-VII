@@ -275,9 +275,6 @@ def menu():
   elif choice == str("3"):
     third_option()
   
-  elif choice == str("4"):
-  	print("minpen")
-
   elif choice == str("666"):
     exit()
 
