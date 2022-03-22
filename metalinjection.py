@@ -1,3 +1,4 @@
+# Daily Metal News by Neoclassic VII!
 import time
 import requests
 import webbrowser
