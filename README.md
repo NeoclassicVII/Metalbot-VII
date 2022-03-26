@@ -25,8 +25,9 @@ Good luck by using and modifying!
 ...
 
 Tips:
-- Type the name of the genre (option N°2) fully and correctly!
-
+- Type the name of the genre (Information about genres/subgenres) fully and correctly!
+- Type the band name and the song name (Lyrics Founder) fully and correctly!
+- 
 # Last Biggest Update: [26.03.22]
 - Lyrics Founder added
 - Updated Modules
