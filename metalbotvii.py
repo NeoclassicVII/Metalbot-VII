@@ -372,8 +372,3 @@ except KeyboardInterrupt:
   print("Exiting the program...")
   print("_" * 25)
   sys.exit()  
-
-# FUCK YEAH, I DID IT!
-# FUCK YEAH, AGAIN!
-# FUCK! REALLY?
-# FUCK, YES!
