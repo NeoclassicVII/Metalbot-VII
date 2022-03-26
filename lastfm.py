@@ -15,7 +15,8 @@ genres = [
 "trve+kvlt","symphonic+black+metal","ambient+black+metal","technical+deathcore","blackened+technical+death+metal","norwegian+black+metal","brutal+death+metal",
 "neoclassical+death+metal","neoclassical+metal","electronicore","doom+metal","gothic+metal","djent","glam+metal","metalcore","groove+metal","progressive+metal",
 "prog+metal","avant+garde+metal","folk+metal","grindcore","melodic+black+metal","cyber+metal","melodic+death+metal","mathcore","white+metal","industrial+metal",
-"symphonic+deathcore","magical+death+metal","neoclassical+deathcore","pornogore","folk+deathcore","folk+death+metal"
+"symphonic+deathcore","melodic+deathcore","slamming+deathcore","beatdown+deathcore","slamming+beatdown+deathcore","magical+death+metal","neoclassical+deathcore","pornogore",
+"folk+deathcore","folk+death+metal","slamming+brutal+death+metal"
 ]
 
 def lastfm(genre):
