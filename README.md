@@ -27,10 +27,9 @@ Good luck by using and modifying!
 Tips:
 - Type the name of the genre (option N°2) fully and correctly!
 
-# Last biggest update: [22.03.22]
-- Daily Metal News
-- New dataset (9000 bands)
-- New genres
-- Updated LastFM
-- More readable code
-- Fixed bugs/errors
+# Last Biggest Update: [26.03.22]
+- Lyrics Founder added
+- Updated Modules
+- New Design
+- New Genres
+- Fixed Bugs/Errors
