@@ -31,6 +31,7 @@ try:
   import requests
   import webbrowser
   import wikipedia
+  import lyricsgenius as lg
   import pyfiglet
   import difflib 
   import colorama
@@ -40,6 +41,8 @@ try:
   from lastfm import lastfm
 
   colorama.init()
+
+  genius = lg.Genius("EF_15CbfRDACICgKOAi1DeJC5QugglpFHh-cXHd1pPUfp2Z-_pNVVli49LEjQe4W")
 
   # Startup Screen
   os.system("cls")
@@ -128,12 +131,12 @@ def second_option():
     print(Fore.BLUE + pyfiglet.figlet_format("Genres"))
     print(Fore.RED + "*Type 666 to go back to the menu!*" + Fore.WHITE)
     nl()
-    print("[" + Fore.RED + "WARNING!" + Fore.WHITE + "] " + Fore.GREEN + "Please type the name of the genre/subgenre fully and correctly! Otherwise the program may not work!")
+    print("[" + Fore.BLUE + "!" + Fore.WHITE + "] " + Fore.GREEN + "Please type the name of the genre/subgenre fully and correctly! Otherwise the program may not work!")
     print(Fore.WHITE)
     nl()
     time.sleep(1)
 
-    ask = print(Fore.YELLOW + "Which subgenre/genre? " + Fore.WHITE, end='')
+    ask = print(Fore.YELLOW + "- Which subgenre/genre? " + Fore.WHITE, end='')
     launch = input().lower()
 
     genres = [
@@ -146,7 +149,8 @@ def second_option():
     "Norwegian Black Metal","Electronicore","Magical Death Metal",
     "Mathcore","Symphonic Black Metal","Ambient Black Metal","Folk Black Metal",
     "Brutal Death Metal","Melodic Black Metal","Neoclassical Metal","Cyber Metal",
-    "Symphonic Deathcore","Folk Deathcore","Neoclassical Deathcore","Porngrind","Pornogore","Folk Deathcore","Folk Death Metal"
+    "Symphonic Deathcore","Melodic Deathcore","Beatdown Deathcore","Slamming Deathcore","Slamming Beatdown Deathcore","Folk Deathcore",
+    "Neoclassical Deathcore","Porngrind","Pornogore","Folk Deathcore","Folk Death Metal", "Slamming Brutal Death Metal"
     ]
 
     if launch == "666":
@@ -192,7 +196,14 @@ def second_option():
         time.sleep(3)
         url="https://www.google.com/search?q="+str(", ".join(difflib.get_close_matches(launch,genres,1)))+""
         webbrowser.open(url)
-        sys.exit()
+        nl()
+        startagain = print(Fore.RED + "Click [ENTER] to start again OR type \"666\" to go back to menu: " + Fore.WHITE, end="")
+        startagian_ = input()
+
+        if startagian_ == "666":
+        	back_to_menu()
+        else:
+        	second_option()
 
       else:
         nl()
@@ -210,6 +221,74 @@ def second_option():
 
 # The third option of the program
 def third_option():
+	time.sleep(0.7)
+	os.system("cls")
+	print(Fore.WHITE + pyfiglet.figlet_format("Lyrics Founder"))
+	nl()
+	print(Fore.RED + "*Type 666 to go back to the menu!*" + Fore.WHITE)
+	time.sleep(0.4)
+	nl()
+	time.sleep(0.6)
+	print("[" + Fore.BLUE + "!" + Fore.WHITE + "] " + Fore.YELLOW + "Type the name of the band" + Fore.RED + " and " + Fore.YELLOW + "the song fully and correctly!" + Fore.WHITE)
+	nl()
+	time.sleep(1.7)
+	print(Fore.CYAN + "[EXAMPLE]" + Fore.WHITE)
+	print(" - Band name: " + Fore.RED + "Archspire" + Fore.WHITE)
+	print(" - Song name: " + Fore.RED + "Drone Corpse Aviator" + Fore.WHITE)
+	time.sleep(1.1)
+	nl()
+	thebandname = print(Fore.GREEN + "- Band name: " + Fore.WHITE, end="")
+	theband = input().lower()
+	
+	if theband == "666":
+		back_to_menu()
+
+	thesongname = print(Fore.GREEN + "- Song name: " + Fore.WHITE, end="")
+	thesong = input().lower()
+	nl()
+
+	if thesong == "666":
+		back_to_menu()
+
+	try:
+		song = genius.search_song(title=thesong, artist=theband)
+		lyrics = song.lyrics
+		time.sleep(1)
+		nl()
+		print(Fore.LIGHTBLACK_EX + lyrics + Fore.WHITE)
+		nl()
+		repeat = print(Fore.RED + "Click [ENTER] to start again OR type \"666\" to go back to menu: " + Fore.WHITE, end="")
+		repeat_= input()
+
+		if repeat_ == "666":
+			back_to_menu()
+		else:
+			third_option()
+
+	except AttributeError:
+		time.sleep(0.8)
+		nl()
+		print(Fore.WHITE + "[" + Fore.RED + "-" + Fore.WHITE + "] " + Fore.RED + "No Lyrics Found!")
+		time.sleep(1.5)
+		third_option()
+	except (requests.ConnectionError, requests.Timeout) as exception:
+		time.sleep(0.7)
+		nl()
+		print(Fore.RED + "[-] No Internet Connection!")
+		print(Fore.WHITE)
+		time.sleep(1.3)
+		back_to_menu()
+	except requests.exceptions.ConnectionError as exception:
+		time.sleep(0.7)
+		nl()
+		print(Fore.RED + "[-] No Internet Connection!")
+		print(Fore.WHITE)
+		time.sleep(1.3)
+		back_to_menu()
+
+
+# Contact/Info
+def contact():
   time.sleep(1)
   os.system("cls")
   print(Fore.CYAN + pyfiglet.figlet_format("Contact"))
@@ -250,18 +329,14 @@ def exit():
 def menu():
   os.system("cls")
   print(Fore.GREEN + pyfiglet.figlet_format("Metalbot VII") + Fore.WHITE)
-  try:
-  	metalnews()
-  except (requests.ConnectionError, requests.Timeout) as exception:
-  	pass
-
+  metalnews()
   print("[1] Random band recomendation")
   print("[2] Info about genres/subgenres, band recomendation")
-  print("[3] Contact/Info")
-  print("[4] Lyrics Founder")
+  print("[3] Lyrics Founder (Not only Metal)")
+  print("[4] Contact/Info")
   print(Fore.RED + "[666] Exit")
   nl()
-  print(Fore.YELLOW + "Choose option: " + Fore.WHITE, end='')
+  print(Fore.LIGHTGREEN_EX + "Choose option: " + Fore.WHITE, end='')
 
   global choice
   choice = input()
@@ -275,6 +350,9 @@ def menu():
   elif choice == str("3"):
     third_option()
   
+  elif choice == str("4"):
+  	contact()
+
   elif choice == str("666"):
     exit()
 
@@ -294,4 +372,8 @@ except KeyboardInterrupt:
   print("Exiting the program...")
   print("_" * 25)
   sys.exit()  
-  
+
+# FUCK YEAH, I DID IT!
+# FUCK YEAH, AGAIN!
+# FUCK! REALLY?
+# FUCK, YES!
