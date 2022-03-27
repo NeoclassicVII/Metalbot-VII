@@ -132,7 +132,14 @@ def second_option():
     print(Fore.RED + "*Type 666 to go back to the menu!*" + Fore.WHITE)
     nl()
     print("[" + Fore.BLUE + "!" + Fore.WHITE + "] " + Fore.GREEN + "Please type the name of the genre/subgenre fully and correctly! Otherwise the program may not work!")
-    print(Fore.WHITE)
+    nl()
+    time.sleep(0.7)
+    print(Fore.RED + "[EXAMPLE]" + Fore.WHITE)
+    print("Black Death " + Fore.RED + "Metal" + Fore.WHITE)
+    print("Neoclassical Death " + Fore.RED + "Metal" + Fore.WHITE)
+    print("Melodic Death " + Fore.RED + "Metal" + Fore.WHITE)
+    print("Symphonic Deathcore")
+    print(Fore.GREEN + "etc..." + Fore.WHITE)
     nl()
     time.sleep(1)
 
@@ -150,7 +157,8 @@ def second_option():
     "Mathcore","Symphonic Black Metal","Ambient Black Metal","Folk Black Metal",
     "Brutal Death Metal","Melodic Black Metal","Neoclassical Metal","Cyber Metal",
     "Symphonic Deathcore","Melodic Deathcore","Beatdown Deathcore","Slamming Deathcore","Slamming Beatdown Deathcore","Folk Deathcore",
-    "Neoclassical Deathcore","Porngrind","Pornogore","Folk Deathcore","Folk Death Metal", "Slamming Brutal Death Metal"
+    "Neoclassical Deathcore","Porngrind","Pornogore","Folk Deathcore","Folk Death Metal","Slamming Brutal Death Metal","Powerviolence","Crossover",
+    "Shitgrind","Pirate Metal","Kawaii Metal","Drone Metal","Drone","Math Metal","Neue Deutsche Härte","Ndh"
     ]
 
     if launch == "666":
@@ -372,3 +380,8 @@ except KeyboardInterrupt:
   print("Exiting the program...")
   print("_" * 25)
   sys.exit()  
+
+# FUCK YEAH, I DID IT!
+# FUCK YEAH, AGAIN!
+# FUCK! REALLY?
+# FUCK, YES!
