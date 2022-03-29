@@ -31,14 +31,18 @@ try:
   import requests
   import webbrowser
   import wikipedia
+  import youtube_dl
   import lyricsgenius as lg
   import pyfiglet
   import difflib 
   import colorama
+  from bs4 import BeautifulSoup
+  from youtubesearchpython import VideosSearch
   from colorama import Fore
   from pyfiglet import figlet_format
   from metalinjection import metalnews
   from lastfm import lastfm
+  #from downloader import main, songDownloader
 
   colorama.init()
 
@@ -158,7 +162,7 @@ def second_option():
     "Brutal Death Metal","Melodic Black Metal","Neoclassical Metal","Cyber Metal",
     "Symphonic Deathcore","Melodic Deathcore","Beatdown Deathcore","Slamming Deathcore","Slamming Beatdown Deathcore","Folk Deathcore",
     "Neoclassical Deathcore","Porngrind","Pornogore","Folk Deathcore","Folk Death Metal","Slamming Brutal Death Metal","Powerviolence","Crossover",
-    "Shitgrind","Pirate Metal","Kawaii Metal","Drone Metal","Drone","Math Metal","Neue Deutsche Härte","Ndh"
+    "Shitgrind","Pirate Metal","Kawaii Metal","Drone Metal","Drone","Math Metal","Neue Deutsche Härte","Ndh","Blackened Deathcore"
     ]
 
     if launch == "666":
@@ -295,6 +299,148 @@ def third_option():
 		back_to_menu()
 
 
+def music_download():
+  # LastFM URL's
+  LASTFM_URL = "https://www.last.fm"
+  searchURL = "https://www.last.fm/search?q="
+
+  # Genres (Tags)
+  genres = [
+  "deathcore","power metal","heavy metal","death metal","black metal","thrash metal","alternative metal","nu metal","folk black metal",
+  "trve kvlt","symphonic black metal","ambient black metal","technical deathcore","blackened technical death metal","norwegian black metal","brutal death metal",
+  "neoclassical death metal","neoclassical metal","electronicore","doom metal","gothic metal","djent","glam metal","metalcore","groove metal","progressive metal",
+  "prog metal","avant garde metal","folk metal","grindcore","melodic black metal","cyber metal","melodic death metal","mathcore","white metal","industrial metal",
+  "symphonic deathcore","melodic deathcore","slamming deathcore","beatdown deathcore","slamming beatdown deathcore","magical death metal",
+  "neoclassical deathcore","pornogore","folk deathcore","folk death metal","slamming brutal death metal","powerviolence","crossover","shitgrind",
+  "pirate metal","kawaii metal","drone metal","drone","math metal","neue deutsche härte","ndh","technical death metal","black death metal","metal",
+  "blackened deathcore"
+  ]
+
+  time.sleep(0.7)
+  os.system("cls")
+  print(Fore.MAGENTA + pyfiglet.figlet_format("Music Downloader"))
+  print()
+  print(Fore.RED + "*Type 666 to go back to the menu!*" + Fore.WHITE)
+  time.sleep(0.4)
+  print()
+  time.sleep(0.6)
+  print("[" + Fore.BLUE + "!" + Fore.WHITE + "] " + Fore.YELLOW + "Type the name of the band" + Fore.RED + " and " + Fore.YELLOW + "the song fully and correctly!" + Fore.WHITE)
+  print()
+  time.sleep(1.7)
+  print(Fore.YELLOW + "[EXAMPLE]" + Fore.WHITE)
+  print("- Lorna Shore Death Portrait")
+  time.sleep(1.1)
+  print()
+  songSearch = print(Fore.CYAN + "- Which song? " + Fore.WHITE, end="")
+
+  # The song
+  song = input()
+  print()
+
+  # Finds the song in LastFM
+  try:
+    source = requests.get(searchURL+song).text
+  except (requests.ConnectionError, requests.Timeout) as exception:
+    time.sleep(0.7)
+    nl()
+    print(Fore.RED + "[-] No Internet Connection!")
+    print(Fore.WHITE)
+    time.sleep(1.7)
+    back_to_menu()
+
+  soup = BeautifulSoup(source, "lxml")
+  findSongList = soup.find("tbody")
+
+  if findSongList == None:
+    time.sleep(0.7)
+    print(Fore.RED + "[-]" + Fore.WHITE + " No song found! ")
+    time.sleep(1.2)
+    os.system("cls")
+    songFinder()
+
+  findSong = findSongList.find("tr")
+  findUrl = findSong.find("td", class_="chartlist-name").a
+
+  # The song URL (If it did find one)
+  songURL = findUrl ["href"]
+
+  # Checks the genre of song
+  genreRequest = requests.get(LASTFM_URL+songURL).text
+  soupCheck = BeautifulSoup(genreRequest, "lxml")
+  findTag = soupCheck.find("section", class_="catalogue-tags").ul
+
+  if findTag == None:
+    time.sleep(0.7)
+    print()
+    print(Fore.RED + "[-] No song found!" + Fore.WHITE)
+    time.sleep(1.1)
+    music_download()
+
+  tags = findTag.find_all("li", class_="tag")
+
+  for tag in tags:
+    if tag.text in genres:
+      def youtubeFinder(song):
+        os.system("cls")
+        time.sleep(0.4)
+        print(Fore.RED + pyfiglet.figlet_format("Choose the song"))
+        search = VideosSearch(song, limit = 6).result()
+
+        for results in range(6):
+          songTitle = search ['result'][results]['title']
+          print(Fore.BLUE + "[","{}".format(results),"] " + Fore.YELLOW,songTitle)
+
+        print()
+        choose = print(Fore.GREEN + "Choose the one, that you want to download: " + Fore.WHITE, end="")
+        thechoice = input()
+
+        if thechoice <= str(6):
+          global link,filename
+          link = search ['result'][int(thechoice)]['link']
+          filename = f"{search ['result'][int(thechoice)]['title']}.mp3"
+          print()
+        else:
+          print()
+          time.sleep(0.6)
+          print(Fore.RED + "Choose the right one!" + Fore.WHITE)
+          time.sleep(0.8)
+          youtubeFinder(song)
+
+      youtubeFinder(song)
+
+      # Downloads the song
+      songDownloader()
+
+  # If not supported genre (if not metal)
+  if tags[-1].text not in genres:
+    time.sleep(0.7)
+    print()
+    print(Fore.RED + "[-] No song found!" + Fore.WHITE)
+    time.sleep(1.1)
+    music_download()
+
+
+def songDownloader():
+  ydl_opts = {
+    'format':'bestaudio/best',
+      'keepvideo':False,
+      'outtmpl': os.environ['USERPROFILE'] + '\\Music\\' + filename
+  }
+  with youtube_dl.YoutubeDL(ydl_opts) as ydl:
+    ydl.download([link])
+    print()
+    print(Fore.GREEN + "[+] " + Fore.WHITE + "Song successfully downloaded!")
+    time.sleep(1.2)
+    print()
+    startagain = print(Fore.YELLOW + "Click ENTER to start again OR type 666 to go back to menu: " + Fore.WHITE, end="")
+    again = input()
+
+    if again == str("666"):
+      back_to_menu()
+    else:
+      music_download()  
+
+
 # Contact/Info
 def contact():
   time.sleep(1)
@@ -341,7 +487,8 @@ def menu():
   print("[1] Random band recomendation")
   print("[2] Info about genres/subgenres, band recomendation")
   print("[3] Lyrics Founder (Not only Metal)")
-  print("[4] Contact/Info")
+  print("[4] Music Downloader")
+  print("[99] Contact")
   print(Fore.RED + "[666] Exit")
   nl()
   print(Fore.LIGHTGREEN_EX + "Choose option: " + Fore.WHITE, end='')
@@ -359,6 +506,9 @@ def menu():
     third_option()
   
   elif choice == str("4"):
+    music_download()
+
+  elif choice == str("99"):
   	contact()
 
   elif choice == str("666"):
@@ -379,9 +529,4 @@ except KeyboardInterrupt:
   print("_" * 25)
   print("Exiting the program...")
   print("_" * 25)
-  sys.exit()  
-
-# FUCK YEAH, I DID IT!
-# FUCK YEAH, AGAIN!
-# FUCK! REALLY?
-# FUCK, YES!
+  sys.exit()
