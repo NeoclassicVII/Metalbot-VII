@@ -28,8 +28,8 @@ Tips:
 - Type the name of the genre (Information about genres/subgenres) fully and correctly!
 - Type the band name and the song name (Lyrics Founder) fully and correctly!
 - 
-# Last Biggest Update: [26.03.22]
-- Lyrics Founder added
+# Last Biggest Update: [29.03.22]
+- Now you can download your favorite metal music directly from Metalbot VII!
 - Updated Modules
 - New Design
 - New Genres
