@@ -42,7 +42,6 @@ try:
   from pyfiglet import figlet_format
   from metalinjection import metalnews
   from lastfm import lastfm
-  #from downloader import main, songDownloader
 
   colorama.init()
 
@@ -300,6 +299,27 @@ def third_option():
 
 
 def music_download():
+  # Song Downloader 
+  def songDownloader():
+    ydl_opts = {
+      'format':'bestaudio/best',
+      'keepvideo':False,
+      'outtmpl': os.environ['USERPROFILE'] + '\\Music\\' + filename
+      }
+    with youtube_dl.YoutubeDL(ydl_opts) as ydl:
+      ydl.download([link])
+      print()
+      print(Fore.GREEN + "[+] " + Fore.WHITE + "Song successfully downloaded!")
+      time.sleep(1.2)
+      print()
+      startagain = print(Fore.YELLOW + "Click ENTER to start again OR type 666 to go back to menu: " + Fore.WHITE, end="")
+      again = input()
+
+      if again == str("666"):
+        back_to_menu()
+      else:
+        music_download()
+
   # LastFM URL's
   LASTFM_URL = "https://www.last.fm"
   searchURL = "https://www.last.fm/search?q="
@@ -335,6 +355,10 @@ def music_download():
 
   # The song
   song = input()
+
+  if song == str("666"):
+    back_to_menu()
+
   print()
 
   # Finds the song in LastFM
@@ -356,7 +380,7 @@ def music_download():
     print(Fore.RED + "[-]" + Fore.WHITE + " No song found! ")
     time.sleep(1.2)
     os.system("cls")
-    songFinder()
+    music_download()
 
   findSong = findSongList.find("tr")
   findUrl = findSong.find("td", class_="chartlist-name").a
@@ -418,27 +442,6 @@ def music_download():
     print(Fore.RED + "[-] No song found!" + Fore.WHITE)
     time.sleep(1.1)
     music_download()
-
-
-def songDownloader():
-  ydl_opts = {
-    'format':'bestaudio/best',
-      'keepvideo':False,
-      'outtmpl': os.environ['USERPROFILE'] + '\\Music\\' + filename
-  }
-  with youtube_dl.YoutubeDL(ydl_opts) as ydl:
-    ydl.download([link])
-    print()
-    print(Fore.GREEN + "[+] " + Fore.WHITE + "Song successfully downloaded!")
-    time.sleep(1.2)
-    print()
-    startagain = print(Fore.YELLOW + "Click ENTER to start again OR type 666 to go back to menu: " + Fore.WHITE, end="")
-    again = input()
-
-    if again == str("666"):
-      back_to_menu()
-    else:
-      music_download()  
 
 
 # Contact/Info
@@ -529,4 +532,4 @@ except KeyboardInterrupt:
   print("_" * 25)
   print("Exiting the program...")
   print("_" * 25)
-  sys.exit()
+  sys.exit()  
