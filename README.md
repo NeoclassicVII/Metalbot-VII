@@ -15,19 +15,34 @@ Link for Metalgram: https://t.me/setlanguage/metalgramm
 Good luck by using and modifying!
 
 (C) Neoclassic VII
+# How to use?
 
-[Program stages]
+The libraries you need:
+- requests
+- webbrowser
+- wikipedia
+- bs4
+- youtube_dl
+- lyricsgenius
+- pyfiglet
+- difflib
+- colorama
+- youtubesearchpython
 
-- Stage One: [complete]
-- Stage Two: [complete]
-- Stage Three: [in process]
-- Stage Four: ?
-...
+I am planning to make an installer for all the required libraries so that you don't have to install it all manually. I am also planning to convert the whole program to .exe so that you don't have to install anything but the program itself. 
 
-Tips:
+If you need some help with libraries or if you have problems - contact me!
+
+# Contact
+- Telegram: @MetalheadDumbledore
+- Instagram: boka.musayelyan
+- Email: neoclassicvii@gmail.com
+
+# Tips:
 - Type the name of the genre (Information about genres/subgenres) fully and correctly!
 - Type the band name and the song name (Lyrics Founder) fully and correctly!
-- 
+- If you have any other problems - contact me!
+
 # Last Biggest Update: [29.03.22]
 - Now you can download your favorite metal music directly from Metalbot VII!
 - Updated Modules
