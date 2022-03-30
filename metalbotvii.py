@@ -161,7 +161,8 @@ def second_option():
     "Brutal Death Metal","Melodic Black Metal","Neoclassical Metal","Cyber Metal",
     "Symphonic Deathcore","Melodic Deathcore","Beatdown Deathcore","Slamming Deathcore","Slamming Beatdown Deathcore","Folk Deathcore",
     "Neoclassical Deathcore","Porngrind","Pornogore","Folk Deathcore","Folk Death Metal","Slamming Brutal Death Metal","Powerviolence","Crossover",
-    "Shitgrind","Pirate Metal","Kawaii Metal","Drone Metal","Drone","Math Metal","Neue Deutsche Härte","Ndh","Blackened Deathcore"
+    "Shitgrind","Pirate Metal","Kawaii Metal","Drone Metal","Drone","Math Metal","Neue Deutsche Härte","Ndh","Blackened Deathcore",
+    "Hentaigrind","Animegrind","Noise","Gorenoise"
     ]
 
     if launch == "666":
@@ -333,7 +334,7 @@ def music_download():
   "symphonic deathcore","melodic deathcore","slamming deathcore","beatdown deathcore","slamming beatdown deathcore","magical death metal",
   "neoclassical deathcore","pornogore","folk deathcore","folk death metal","slamming brutal death metal","powerviolence","crossover","shitgrind",
   "pirate metal","kawaii metal","drone metal","drone","math metal","neue deutsche härte","ndh","technical death metal","black death metal","metal",
-  "blackened deathcore"
+  "blackened deathcore","hentaigrind","animegrind","noisecore","gorenoise"
   ]
 
   time.sleep(0.7)
@@ -419,10 +420,17 @@ def music_download():
         thechoice = input()
 
         if thechoice <= str(6):
-          global link,filename
-          link = search ['result'][int(thechoice)]['link']
-          filename = f"{search ['result'][int(thechoice)]['title']}.mp3"
-          print()
+          try:
+            global link,filename
+            link = search ['result'][int(thechoice)]['link']
+            filename = f"{search ['result'][int(thechoice)]['title']}.mp3"
+            print()
+          except ValueError:
+            print()
+            time.sleep(0.6)
+            print(Fore.RED + "Choose the right one!" + Fore.WHITE)
+            time.sleep(0.8)
+            youtubeFinder(song)
         else:
           print()
           time.sleep(0.6)
