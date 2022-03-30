@@ -35,3 +35,8 @@ def metalnews():
   	print(Fore.RED + "[-] No Internet Connection!".center(55))
   	print(Fore.WHITE)
   	pass
+  except (requests.exceptions.ChunkedEncodingError) as exception:
+    print(Fore.RED + "[Latest News]".center(55) + Fore.WHITE)
+    print(Fore.RED + "[-] No Internet Connection!".center(55))
+    print(Fore.WHITE)
+    pass
