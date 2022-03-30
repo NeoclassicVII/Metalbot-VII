@@ -29,6 +29,9 @@ The libraries you need:
 - colorama
 - youtubesearchpython
 
+You also need to install FFmpeg. 
+Here is a tutorial for that: https://windowsloop.com/install-ffmpeg-windows-10/
+
 I am planning to make an installer for all the required libraries so that you don't have to install it all manually. I am also planning to convert the whole program to .exe so that you don't have to install anything but the program itself. 
 
 If you need some help with libraries or if you have problems - contact me!
