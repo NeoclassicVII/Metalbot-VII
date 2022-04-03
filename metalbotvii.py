@@ -150,79 +150,65 @@ def second_option():
     launch = input().lower()
 
     genres = [
-    "Deathcore","Power Metal","Heavy Metal Music","Death Metal","Black Metal",
-    "Groove Metal","Thrash Metal","Alternative Metal","Nu Metal","Progressive Metal","Black-Death Metal",
-    "Black Death Metal","Blackened Death Metal",
-    "Technical Death Metal","Metalcore","White Metal","Melodic Death Metal","Folk Metal","Neoclassical Death Metal",
-    "Doom Metal","Industrial Metal","Gothic Metal","Djent","Avant-Garde Metal","Prog Metal","Glam Metal",
-    "Symphonic Deathcore","Technical Deathcore","Blackened Technical Death Metal","Grindcore","Trve Kvlt",
-    "Norwegian Black Metal","Electronicore","Magical Death Metal",
-    "Mathcore","Symphonic Black Metal","Ambient Black Metal","Folk Black Metal",
-    "Brutal Death Metal","Melodic Black Metal","Neoclassical Metal","Cyber Metal",
-    "Symphonic Deathcore","Melodic Deathcore","Beatdown Deathcore","Slamming Deathcore","Slamming Beatdown Deathcore","Folk Deathcore",
-    "Neoclassical Deathcore","Porngrind","Pornogore","Folk Deathcore","Folk Death Metal","Slamming Brutal Death Metal","Powerviolence","Crossover",
-    "Shitgrind","Pirate Metal","Kawaii Metal","Drone Metal","Drone","Math Metal","Neue Deutsche Härte","Ndh","Blackened Deathcore",
-    "Hentaigrind","Animegrind","Noise","Gorenoise"
+    "metal","core","grind","noise","blackened","djent","neue deutsche härte","ndh","drone","powerviolence","crossover","gore"
     ]
 
     if launch == "666":
       back_to_menu()
 
     try:
-
-      if difflib.get_close_matches(launch,genres,1):
-        nl()
-        time.sleep(0.6)
-          
-        try:
-
-          if wikipedia.summary(", ".join(difflib.get_close_matches(launch,genres,1)), sentences = 5, auto_suggest = False):
-            print(Fore.GREEN + "[+] Wikipedia Page Found!" + Fore.WHITE)
+      for word in genres:
+        if word in launch:
+          try:
             nl()
-            print(Fore.CYAN + wikipedia.summary(", ".join(difflib.get_close_matches(launch,genres,1)), sentences = 5, auto_suggest = False))  
-
-          else:
+            time.sleep(0.6)
+            if wikipedia.summary(launch, sentences = 5, auto_suggest = False):
+              print(Fore.GREEN + "[+] Wikipedia Page Found!" + Fore.WHITE)
+              nl()
+              print(Fore.CYAN + wikipedia.summary(launch, sentences = 5, auto_suggest = False))
+            else:
+              pass
+          except wikipedia.exceptions.PageError:
+            time.sleep(0.5)
+            print(Fore.RED + "[-] No Wikipedia page found " + Fore.WHITE)
             pass
 
-        except wikipedia.exceptions.PageError:
-          time.sleep(0.5)
-          print(Fore.RED + "[-] No Wikipedia page found " + Fore.WHITE)
-          pass
+          lastfm(launch)
 
-        lastfm(launch)
+          time.sleep(1)
+          nl()
+          print(Fore.RED + "[+] " + Fore.WHITE + "Press ENTER to search in browser:", end='') 
+          print(Fore.WHITE)
+          search = input()
 
-        time.sleep(1)
-        nl()
-        print(Fore.RED + "[+] " + Fore.WHITE + "Press ENTER to search in browser:", end='') 
-        print(Fore.WHITE)
-        search = input()
+          if search == "666":
+            back_to_menu()
 
-        if search == "666":
-          back_to_menu()
+          time.sleep(1)
+          nl()
+          print(Fore.BLUE + "I'll redirect you to google in a moment, so you can find information about that genre!")
+          print(Fore.GREEN + "." * 86, Fore.WHITE)
 
-        time.sleep(1)
-        nl()
-        print(Fore.BLUE + "I'll redirect you to google in a moment, so you can find information about that genre!")
-        print(Fore.GREEN + "." * 86, Fore.WHITE)
+          time.sleep(3)
+          url="https://www.google.com/search?q="+str(launch)+""
+          webbrowser.open(url)
+          nl()
+          startagain = print(Fore.RED + "Click [ENTER] to start again OR type \"666\" to go back to menu: " + Fore.WHITE, end="")
+          startagian_ = input()
 
-        time.sleep(3)
-        url="https://www.google.com/search?q="+str(", ".join(difflib.get_close_matches(launch,genres,1)))+""
-        webbrowser.open(url)
-        nl()
-        startagain = print(Fore.RED + "Click [ENTER] to start again OR type \"666\" to go back to menu: " + Fore.WHITE, end="")
-        startagian_ = input()
+          if startagian_ == "666":
+            back_to_menu()
+          else:
+            second_option()
 
-        if startagian_ == "666":
-        	back_to_menu()
         else:
-        	second_option()
-
-      else:
+          pass
+        # If the genre is not metal
         nl()
         time.sleep(1)
         print("I don't know such a genre. ")
         time.sleep(1)
-        os.system("cls")
+        second_option()
 
     except (requests.ConnectionError, requests.Timeout) as exception:
       time.sleep(0.6)
