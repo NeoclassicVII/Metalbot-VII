@@ -46,9 +46,7 @@ If you need some help with libraries or if you have problems - contact me!
 - Type the band name and the song name (Lyrics Founder) fully and correctly!
 - If you have any other problems - contact me!
 
-# Last Biggest Update: [29.03.22]
-- Now you can download your favorite metal music directly from Metalbot VII!
+# Last Biggest Update: [04.03.22]
+- New algorithm to search genres! Almost all metal genres added!
 - Updated Modules
-- New Design
-- New Genres
 - Fixed Bugs/Errors
