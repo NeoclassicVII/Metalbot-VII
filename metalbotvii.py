@@ -447,7 +447,7 @@ def contact():
   nl()
   print(Fore.RED + "Telegram: " + Fore.GREEN + "@MetalheadDumbledore")
   print(Fore.RED + "Instagram: " + Fore.GREEN + "boka.musayelyan")
-  print(Fore.RED + "E-Mail: " +  Fore.GREEN + "bokamusayelyanwindows@gmail.com")
+  print(Fore.RED + "E-Mail: " +  Fore.GREEN + "neoclassicvii@gmail.com")
   nl()
   print(Fore.RED + "Other projects:")
   nl()
