@@ -56,7 +56,6 @@ If you need some help with libraries or if you have problems - contact me!
 [![choosethesong.png](https://i.postimg.cc/hjkFzzZh/choosethesong.png)](https://postimg.cc/Hc9vFxgC)
 [![downloading.png](https://i.postimg.cc/B6sHqM4v/downloading.png)](https://postimg.cc/8FKj4dF8)
 [![downloaded.png](https://i.postimg.cc/43XxyM7j/downloaded.png)](https://postimg.cc/Wdfvf577)
-[![contact.png](https://i.postimg.cc/sDzw9Mzr/contact.png)](https://postimg.cc/PN6WdrN3)
 
 Enjoy the music! (especially metal music!)
 
