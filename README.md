@@ -46,3 +46,19 @@ If you need some help with libraries or if you have problems - contact me!
 - New algorithm to search genres! Almost all metal genres added!
 - Updated Modules
 - Fixed Bugs/Errors
+
+# Screenshots 
+[![startmenu.png](https://i.postimg.cc/pT50qqCz/startmenu.png)](https://postimg.cc/S2q7KLwx)
+[![randombands.png](https://i.postimg.cc/xdwGTYGN/randombands.png)](https://postimg.cc/Tyc5Cz4T)
+[![genres.png](https://i.postimg.cc/J4jSRwr1/genres.png)](https://postimg.cc/Xp7sgzBh)
+[![genresresults.png](https://i.postimg.cc/hvTZ4xqC/genresresults.png)](https://postimg.cc/V0sWDJvM)
+[![musicdownloader.png](https://i.postimg.cc/NFHNWd4j/musicdownloader.png)](https://postimg.cc/MfzbBbNC)
+[![choosethesong.png](https://i.postimg.cc/hjkFzzZh/choosethesong.png)](https://postimg.cc/Hc9vFxgC)
+[![downloading.png](https://i.postimg.cc/B6sHqM4v/downloading.png)](https://postimg.cc/8FKj4dF8)
+[![downloaded.png](https://i.postimg.cc/43XxyM7j/downloaded.png)](https://postimg.cc/Wdfvf577)
+[![contact.png](https://i.postimg.cc/sDzw9Mzr/contact.png)](https://postimg.cc/PN6WdrN3)
+
+Enjoy the music! (especially metal music!)
+
+By Neoclassic VII
+
