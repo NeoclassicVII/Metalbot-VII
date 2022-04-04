@@ -32,7 +32,9 @@ The libraries you need:
 You also need to install FFmpeg. 
 Here is a tutorial for that: https://windowsloop.com/install-ffmpeg-windows-10/
 
-I am planning to make an installer for all the required libraries so that you don't have to install it all manually. I am also planning to convert the whole program to .exe so that you don't have to install anything but the program itself. 
+Requirements.txt added! Now you can just run the command "pip install -r requirements.txt" and install all modules and libraries! Then you will have to download FFmpeg (see tutorial above) and that's it! 
+
+I am planning to convert the whole program to .exe so that you don't have to install anything but the program itself. 
 
 If you need some help with libraries or if you have problems - contact me!
 
@@ -46,7 +48,8 @@ If you need some help with libraries or if you have problems - contact me!
 - Type the band name and the song name (Lyrics Founder) fully and correctly!
 - If you have any other problems - contact me!
 
-# Last Biggest Update: [04.03.22]
+# Last Biggest Update: [04.04.22]
+- [requirements.txt] added!
 - New algorithm to search genres! Almost all metal genres added!
 - Updated Modules
 - Fixed Bugs/Errors
