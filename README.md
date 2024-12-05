@@ -3,7 +3,7 @@
 Created by Neoclassic VII
 This program is for Metalheads only.
 
-For any questions and/or ideas, please contact him оn Telegram: @MetalheadDumbledore
+For any questions and/or ideas, please contact: neoclassicvii@gmail.com
 
 Good luck by using and modifying!
 
