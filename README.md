@@ -32,9 +32,7 @@ I am planning to convert the whole program to .exe so that you don't have to ins
 If you need some help with libraries or if you have problems - contact me!
 
 # Contact
-- Telegram: @MetalheadDumbledore
-- Instagram: boka.musayelyan
-- Email: neoclassicvii@gmail.com
+Email: neoclassicvii@gmail.com
 
 # Tips:
 - Type the name of the genre (Information about genres/subgenres) fully and correctly!
